@@ -135,22 +135,6 @@ class Hydroviewer(TethysAppBase):
                 url='get-forecast-data-csv',
                 controller='{0}.controllers.get_lis_data_csv'.format(base_name)),
             UrlMap(
-                name='get_lis_shp',
-                url='get-lis-shp',
-                controller='{0}.controllers.shp_to_geojson'.format(base_name)),
-            UrlMap(
-                name='get_lis_shp',
-                url='lis-rapid/get-lis-shp',
-                controller='{0}.controllers.shp_to_geojson'.format(base_name)),
-            UrlMap(
-                name='get_hiwat_shp',
-                url='get-hiwat-shp',
-                controller='{0}.controllers.shp_to_geojson'.format(base_name)),
-            UrlMap(
-                name='get_hiwat_shp',
-                url='hiwat-rapid/get-hiwat-shp',
-                controller='{0}.controllers.shp_to_geojson'.format(base_name)),
-            UrlMap(
                 name='set_def_ws',
                 url='admin/setdefault',
                 controller='{0}.controllers.setDefault'.format(base_name)),

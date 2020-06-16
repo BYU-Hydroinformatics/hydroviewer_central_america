@@ -697,6 +697,7 @@ function get_forecast_percent(comid) {
             'comid': comid,
         },
         error: function() {
+            $('#mytable').html('');
             $('#info').html('<p class="alert alert-danger" style="text-align: center"><strong>An unknown error occurred while retrieving the forecast table</strong></p>');
             $('#info').removeClass('hidden');
 
@@ -705,7 +706,8 @@ function get_forecast_percent(comid) {
             }, 5000);
         },
         success: function(data) {
-            $("#tbody").html(data)
+            $("#mytable").html(data['table']);
+            $("#mytable").removeClass('hidden');
         }
     })
 }
@@ -777,7 +779,7 @@ function map_events() {
                         get_time_series(comid, tot_drain_area);
                         get_historic_data(comid, tot_drain_area);
                         get_flow_duration_curve(comid, tot_drain_area);
-                        // get_forecast_percent(comid);
+                        get_forecast_percent(comid);
                     },
                     error: function(XMLHttpRequest, textStatus, errorThrown) {
                         console.log(Error);
